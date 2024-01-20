@@ -1,27 +1,27 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { data } from "../data/data";
+import { projectData } from "../data/data";
 import { RxExternalLink } from "react-icons/rx";
 import { AiOutlineGithub } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const WorkCard = () => {
-  const reversedData = [...data].reverse();
+  const data = [...projectData];
 
   return (
     <>
-      {reversedData.map((data) => {
+      {data.map((projectData) => {
         return (
           <div
             data-aos="zoom-in"
-            key={data.id}
+            key={projectData.id}
             className="flex flex-col justify-center items-center gap-4"
           >
             <POPUP className="img-content relative">
               <div className="h-[280px] w-[380px] hover:scale-125 transition duration-500 cursor-pointer shadow-xl rounded-md overflow-hidden sm:h-[260px] sm:w-[92%] sm:bg-cover mx-auto ">
                 <img
-                  src={data.img}
-                  alt={data.title}
+                  src={projectData.img}
+                  alt={projectData.title}
                   className=" object-fit w-full h-full hover:scale-125 transition duration-500 cursor-pointer"
                 />
               </div>
@@ -30,11 +30,11 @@ const WorkCard = () => {
                 className={` popup w-full  h-[280px] shadow-xl rounded-md overflow-hidden sm:h-[260px] sm:w-[92%] p-4`}
               >
                 <p className=" text-gray-900 text-base leading-[1.4] text-justify w-[90%]">
-                  {data.desc}
+                  {projectData.desc}
                 </p>
                 <div className=" flex items-center justify-center gap-4">
                   <Link
-                    to={data.link}
+                    to={projectData.link}
                     target="_blank"
                     className="  mt-3 rounded-md shadow-md p-1 px-2 flex gap-2 items-center justify-center font-medium"
                   >
@@ -43,7 +43,7 @@ const WorkCard = () => {
                   </Link>
                   <br className="w-[2px] bg-white" />
                   <Link
-                    to={data.git}
+                    to={projectData.git}
                     target="_blank"
                     className="  mt-3 rounded-md shadow-md p-1 px-2 flex gap-2 items-center justify-center font-medium"
                   >
@@ -54,7 +54,7 @@ const WorkCard = () => {
               </div>
             </POPUP>
             <p className="text-gray-800 text-xl font-medium sm:text-lg">
-              {data.title}
+              {projectData.title}
             </p>
           </div>
         );

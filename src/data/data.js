@@ -1,13 +1,12 @@
 
 
-export const data = [
+export const projectData = [
   {
     id: 1,
     img: '',
-    title: "",
+    title: "one",
     desc: "",
     link: "",
-    git: "",
   },
   {
     id: 2,
@@ -19,10 +18,19 @@ export const data = [
   {
     id: 3,
     img: '',
-    title: "",
+    title: "three",
     desc: "",
     link: "",
     git: "",
   }
   
+];
+export const skillData = [
+  {
+    id: 1,
+    logo: 'https://img.icons8.com/color/48/null/nodejs.png',
+    bgColor: "white",
+    textColor: "black",
+    skill: "nodeJS",
+  },
 ];
